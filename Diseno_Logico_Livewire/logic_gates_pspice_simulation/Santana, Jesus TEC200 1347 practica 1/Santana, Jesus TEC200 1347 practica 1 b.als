@@ -1,0 +1,30 @@
+* Schematics Aliases *
+
+.ALIASES
+X_U3A           U3A(A=A Y=NOT PWR=$G_DPWR GND=$G_DGND )
+X_U4A           U4A(A=A B=B Y=AND PWR=$G_DPWR GND=$G_DGND )
+X_U1A           U1A(A=A B=B Y=NAND PWR=$G_DPWR GND=$G_DGND )
+X_U5A           U5A(A=A B=B Y=OR PWR=$G_DPWR GND=$G_DGND )
+X_U6A           U6A(A=A B=B Y=NOR PWR=$G_DPWR GND=$G_DGND )
+X_U8A           U8A(A=XOR Y=XNOR PWR=$G_DPWR GND=$G_DGND )
+X_U7A           U7A(A=A B=B Y=XOR PWR=$G_DPWR GND=$G_DGND )
+R_R1            R1(1=NOR 2=$N_0001 )
+X_U10A          U10A(A=y Y=$N_0002 PWR=$G_DPWR GND=$G_DGND )
+X_U9A           U9A(A=x Y=$N_0003 PWR=$G_DPWR GND=$G_DGND )
+V_V1            V1(+=$N_0001 -=0 )
+U_DSTM2          DSTM2(PIN0=x PIN1=y PIN2=A PIN3=B )
+_    _(A=A)
+_    _(NOT=NOT)
+_    _(B=B)
+_    _(AND=AND)
+_    _(NAND=NAND)
+_    _(OR=OR)
+_    _(NOR=NOR)
+_    _(XOR=XOR)
+_    _(XNOR=XNOR)
+_    _(y=y)
+_    _(x=x)
+_    _($G_DGND=$G_DGND)
+_    _($G_DPWR=$G_DPWR)
+.ENDALIASES
+

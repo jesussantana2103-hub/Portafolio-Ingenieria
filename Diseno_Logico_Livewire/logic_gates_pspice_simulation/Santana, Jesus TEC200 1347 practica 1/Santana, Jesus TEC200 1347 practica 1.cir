@@ -1,0 +1,23 @@
+* C:\Users\kelvi\Downloads\Santana, Jesus TEC200 1347 practica 1\Santana, Jesus TEC200 1347 practica 1.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Sat Sep 13 10:49:14 2025
+
+
+
+** Analysis setup **
+.tran 0ns 40us
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Santana, Jesus TEC200 1347 practica 1.net"
+.INC "Santana, Jesus TEC200 1347 practica 1.als"
+
+
+.probe
+
+
+.END

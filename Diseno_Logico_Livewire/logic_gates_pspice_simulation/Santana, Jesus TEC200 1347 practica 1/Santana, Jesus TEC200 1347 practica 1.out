@@ -1,0 +1,338 @@
+
+**** 09/13/25 11:13:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\kelvi\Downloads\Santana, Jesus TEC200 1347 practica 1\Santana, Jesus TEC200 1347 practica 1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Sat Sep 13 10:49:14 2025
+
+
+
+** Analysis setup **
+.tran 0ns 40us
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Santana, Jesus TEC200 1347 practica 1.net"
+
+**** INCLUDING "Santana, Jesus TEC200 1347 practica 1.net" ****
+* Schematics Netlist *
+
+
+
+X_U3A         A NOT $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U4A         A B AND $G_DPWR $G_DGND 7408 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U1A         A B NAND $G_DPWR $G_DGND 7400 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U5A         A B OR $G_DPWR $G_DGND 7432 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U6A         A B NOR $G_DPWR $G_DGND 7433 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U8A         XOR XNOR $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U7A         A B XOR $G_DPWR $G_DGND 7486 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+U_DSTM1         FSTIM(2) $G_DPWR $G_DGND A B IO_STM FILE="tabla2.txt"
++  IO_LEVEL=0 SIGNAMES=A,B
+R_R1         NOR $N_0001  1k  
+V_V1         $N_0001 0 5V
+
+**** RESUMING "Santana, Jesus TEC200 1347 practica 1.cir" ****
+.INC "Santana, Jesus TEC200 1347 practica 1.als"
+
+
+
+**** INCLUDING "Santana, Jesus TEC200 1347 practica 1.als" ****
+* Schematics Aliases *
+
+.ALIASES
+X_U3A           U3A(A=A Y=NOT PWR=$G_DPWR GND=$G_DGND )
+X_U4A           U4A(A=A B=B Y=AND PWR=$G_DPWR GND=$G_DGND )
+X_U1A           U1A(A=A B=B Y=NAND PWR=$G_DPWR GND=$G_DGND )
+X_U5A           U5A(A=A B=B Y=OR PWR=$G_DPWR GND=$G_DGND )
+X_U6A           U6A(A=A B=B Y=NOR PWR=$G_DPWR GND=$G_DGND )
+X_U8A           U8A(A=XOR Y=XNOR PWR=$G_DPWR GND=$G_DGND )
+X_U7A           U7A(A=A B=B Y=XOR PWR=$G_DPWR GND=$G_DGND )
+U_DSTM1          DSTM1(PWR=$G_DPWR GND=$G_DGND 1=A 2=B )
+R_R1            R1(1=NOR 2=$N_0001 )
+V_V1            V1(+=$N_0001 -=0 )
+_    _(A=A)
+_    _(NOT=NOT)
+_    _(B=B)
+_    _(AND=AND)
+_    _(NAND=NAND)
+_    _(OR=OR)
+_    _(NOR=NOR)
+_    _(XOR=XOR)
+_    _(XNOR=XNOR)
+_    _($G_DPWR=$G_DPWR)
+_    _($G_DGND=$G_DGND)
+.ENDALIASES
+
+
+**** RESUMING "Santana, Jesus TEC200 1347 practica 1.cir" ****
+.probe
+
+
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node NOR
+*
+* Moving X_U6A.U1:OUT1 from analog node NOR to new digital node NOR$DtoA
+X$NOR_DtoA1
++ NOR$DtoA
++ NOR
++ $G_DPWR
++ $G_DGND
++ DtoA_STD_OC
++       PARAMS: DRVH=   1.0000E+06 DRVL= 104    CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+
+X$DIGIFPWR 0 DIGIFPWR
+
+**** 09/13/25 11:13:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\kelvi\Downloads\Santana, Jesus TEC200 1347 practica 1\Santana, Jesus TEC200 1347 practica 1.sch
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DIN74_OC        
+        FILE DSO_DTOA        
+      FORMAT    6            
+    TIMESTEP  100.000000E-12 
+      S0NAME 0               
+       S0TSW    3.500000E-09 
+       S0RLO    7.13         
+       S0RHI  389            
+      S1NAME 1               
+       S1TSW    5.500000E-09 
+       S1RLO  200.000000E+03 
+       S1RHI  200.000000E+03 
+      S2NAME X               
+       S2TSW    3.500000E-09 
+       S2RLO   42.9          
+       S2RHI  116            
+      S3NAME R               
+       S3TSW    3.500000E-09 
+       S3RLO   42.9          
+       S3RHI  116            
+      S4NAME F               
+       S4TSW    3.500000E-09 
+       S4RLO   42.9          
+       S4RHI  116            
+      S5NAME Z               
+       S5TSW    5.500000E-09 
+       S5RLO  200.000000E+03 
+       S5RHI  200.000000E+03 
+
+
+**** 09/13/25 11:13:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\kelvi\Downloads\Santana, Jesus TEC200 1347 practica 1\Santana, Jesus TEC200 1347 practica 1.sch
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_04            D_08            D_00            D_32            
+      TPLHMN    4.800000E-09    7.000000E-09    4.400000E-09    4.000000E-09 
+      TPLHTY   12.000000E-09   17.500000E-09   11.000000E-09   10.000000E-09 
+      TPLHMX   22.000000E-09   27.000000E-09   22.000000E-09   15.000000E-09 
+      TPHLMN    3.200000E-09    4.800000E-09    2.800000E-09    5.600000E-09 
+      TPHLTY    8.000000E-09   12.000000E-09    7.000000E-09   14.000000E-09 
+      TPHLMX   15.000000E-09   19.000000E-09   15.000000E-09   22.000000E-09 
+
+
+               D_33            D0_GATE         D_86_1          D_86_2          
+      TPLHMN    4.000000E-09    0               3.600000E-09    4.800000E-09 
+      TPLHTY   10.000000E-09    0               9.000000E-09   12.000000E-09 
+      TPLHMX   15.000000E-09    0              17.000000E-09   24.000000E-09 
+      TPHLMN    4.800000E-09    0               2.000000E-09    2.800000E-09 
+      TPHLTY   12.000000E-09    0               5.000000E-09    7.000000E-09 
+      TPHLMX   18.000000E-09    0              11.000000E-09   16.000000E-09 
+
+
+               D_86_3          
+      TPLHMN    2.400000E-09 
+      TPLHTY    6.000000E-09 
+      TPLHMX    6.000000E-09 
+      TPHLMN    2.400000E-09 
+      TPHLTY    6.000000E-09 
+      TPHLMX    6.000000E-09 
+
+
+**** 09/13/25 11:13:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\kelvi\Downloads\Santana, Jesus TEC200 1347 practica 1\Santana, Jesus TEC200 1347 practica 1.sch
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_STD          IO_STD_OC       
+        DRVL    0             104             104            
+        DRVH    0              96.4             1.000000E+06 
+       AtoD1                 AtoD_STD        AtoD_STD        
+       AtoD2                 AtoD_STD_NX     AtoD_STD_NX     
+       AtoD3                 AtoD_STD        AtoD_STD        
+       AtoD4                 AtoD_STD_NX     AtoD_STD_NX     
+       DtoA1 DtoA_STM        DtoA_STD        DtoA_STD_OC     
+       DtoA2 DtoA_STM        DtoA_STD        DtoA_STD_OC     
+       DtoA3 DtoA_STM        DtoA_STD        DtoA_STD_OC     
+       DtoA4 DtoA_STM        DtoA_STD        DtoA_STD_OC     
+      TSWHL1                    1.373000E-09    2.617000E-09 
+      TSWHL2                    1.346000E-09    2.598000E-09 
+      TSWHL3                    1.511000E-09    2.747000E-09 
+      TSWHL4                    1.487000E-09    2.732000E-09 
+      TSWLH1                    3.382000E-09    1.432000E-09 
+      TSWLH2                    3.424000E-09    1.460000E-09 
+      TSWLH3                    3.517000E-09    1.589000E-09 
+      TSWLH4                    3.564000E-09    1.615000E-09 
+       TPWRT  100.000000E+03  100.000000E+03  100.000000E+03 
+
+
+**** 09/13/25 11:13:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\kelvi\Downloads\Santana, Jesus TEC200 1347 practica 1\Santana, Jesus TEC200 1347 practica 1.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  NOR)    1.4607  ($G_DGND)    0.0000                   ($G_DPWR)    5.0000    
+
+($N_0001)    5.0000                   
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(X_U7A.A_BUF) : X  (       B) : X     (    XNOR) : X     (     XOR) : X         
+
+( X_U7A.D) : X     (     AND) : X     (NOR$DtoA) : X     ( X_U7A.C) : X         
+
+(       A) : X     (     NOT) : X     (      OR) : X     (    NAND) : X         
+
+(X_U7A.B_BUF) : X  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -3.539E-03
+    X$DIGIFPWR.VDPWR  -3.052E-02
+    X$DIGIFPWR.VDGND   3.534E-03
+
+    TOTAL POWER DISSIPATION   1.70E-01  WATTS
+
+
+**** 09/13/25 11:13:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\kelvi\Downloads\Santana, Jesus TEC200 1347 practica 1\Santana, Jesus TEC200 1347 practica 1.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+**** 09/13/25 11:13:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\kelvi\Downloads\Santana, Jesus TEC200 1347 practica 1\Santana, Jesus TEC200 1347 practica 1.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  NOR)    1.4607  ($G_DGND)    0.0000                   ($G_DPWR)    5.0000    
+
+($N_0001)    5.0000                   
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(X_U7A.A_BUF) : X  (       B) : X     (    XNOR) : X     (     XOR) : X         
+
+( X_U7A.D) : X     (     AND) : X     (NOR$DtoA) : X     ( X_U7A.C) : X         
+
+(       A) : X     (     NOT) : X     (      OR) : X     (    NAND) : X         
+
+(X_U7A.B_BUF) : X  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -3.539E-03
+    X$DIGIFPWR.VDPWR  -3.052E-02
+    X$DIGIFPWR.VDGND   3.534E-03
+
+    TOTAL POWER DISSIPATION   1.70E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

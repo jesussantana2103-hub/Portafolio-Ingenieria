@@ -1,0 +1,23 @@
+* D:\Descargas\Santana, Jesus TEC200 1347 Practica 04\Santana, Jesus TEC200 1347 Practica 04.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Wed Oct 22 22:23:20 2025
+
+
+
+** Analysis setup **
+.tran 0ns 80ns
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Santana, Jesus TEC200 1347 Practica 04.net"
+.INC "Santana, Jesus TEC200 1347 Practica 04.als"
+
+
+.probe
+
+
+.END

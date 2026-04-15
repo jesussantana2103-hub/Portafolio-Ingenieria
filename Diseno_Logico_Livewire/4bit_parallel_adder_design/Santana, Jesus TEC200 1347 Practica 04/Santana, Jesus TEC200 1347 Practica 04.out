@@ -1,0 +1,153 @@
+
+**** 10/22/25 22:35:21 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\Descargas\Santana, Jesus TEC200 1347 Practica 04\Santana, Jesus TEC200 1347 Practica 04.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Wed Oct 22 22:23:20 2025
+
+
+
+** Analysis setup **
+.tran 0ns 80ns
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Santana, Jesus TEC200 1347 Practica 04.net"
+
+**** INCLUDING "Santana, Jesus TEC200 1347 Practica 04.net" ****
+* Schematics Netlist *
+
+
+
+X_U1         X Y $N_0001 $G_DPWR $G_DGND 7486 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U5         X Y $N_0002 $G_DPWR $G_DGND 7432 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U3         X Y $N_0003 $G_DPWR $G_DGND 7408 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U4         $N_0002 Cin $N_0004 $G_DPWR $G_DGND 7408 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U2         $N_0001 Cin S $G_DPWR $G_DGND 7486 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U6         $N_0003 $N_0004 Cout $G_DPWR $G_DGND 7432 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+U_DSTM1         FSTIM(3) $G_DPWR $G_DGND Cin X Y IO_STM FILE="tabla3.txt"
++  IO_LEVEL=0 SIGNAMES=Cin,X,Y
+
+**** RESUMING "Santana, Jesus TEC200 1347 Practica 04.cir" ****
+.INC "Santana, Jesus TEC200 1347 Practica 04.als"
+
+
+
+**** INCLUDING "Santana, Jesus TEC200 1347 Practica 04.als" ****
+* Schematics Aliases *
+
+.ALIASES
+X_U1            U1(A=X B=Y Y=$N_0001 PWR=$G_DPWR GND=$G_DGND )
+X_U5            U5(A=X B=Y Y=$N_0002 PWR=$G_DPWR GND=$G_DGND )
+X_U3            U3(A=X B=Y Y=$N_0003 PWR=$G_DPWR GND=$G_DGND )
+X_U4            U4(A=$N_0002 B=Cin Y=$N_0004 PWR=$G_DPWR GND=$G_DGND )
+X_U2            U2(A=$N_0001 B=Cin Y=S PWR=$G_DPWR GND=$G_DGND )
+X_U6            U6(A=$N_0003 B=$N_0004 Y=Cout PWR=$G_DPWR GND=$G_DGND )
+U_DSTM1          DSTM1(PWR=$G_DPWR GND=$G_DGND 1=Cin 2=X 3=Y )
+_    _(X=X)
+_    _(Y=Y)
+_    _(Cin=Cin)
+_    _(S=S)
+_    _(Cout=Cout)
+_    _($G_DPWR=$G_DPWR)
+_    _($G_DGND=$G_DGND)
+.ENDALIASES
+
+
+**** RESUMING "Santana, Jesus TEC200 1347 Practica 04.cir" ****
+.probe
+
+
+.END
+
+**** 10/22/25 22:35:21 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\Descargas\Santana, Jesus TEC200 1347 Practica 04\Santana, Jesus TEC200 1347 Practica 04.sch
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_GATE         D_86_1          D_86_2          D_86_3          
+      TPLHMN    0               3.600000E-09    4.800000E-09    2.400000E-09 
+      TPLHTY    0               9.000000E-09   12.000000E-09    6.000000E-09 
+      TPLHMX    0              17.000000E-09   24.000000E-09    6.000000E-09 
+      TPHLMN    0               2.000000E-09    2.800000E-09    2.400000E-09 
+      TPHLTY    0               5.000000E-09    7.000000E-09    6.000000E-09 
+      TPHLMX    0              11.000000E-09   16.000000E-09    6.000000E-09 
+
+
+               D_32            D_08            
+      TPLHMN    4.000000E-09    7.000000E-09 
+      TPLHTY   10.000000E-09   17.500000E-09 
+      TPLHMX   15.000000E-09   27.000000E-09 
+      TPHLMN    5.600000E-09    4.800000E-09 
+      TPHLTY   14.000000E-09   12.000000E-09 
+      TPHLMX   22.000000E-09   19.000000E-09 
+
+
+**** 10/22/25 22:35:21 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\Descargas\Santana, Jesus TEC200 1347 Practica 04\Santana, Jesus TEC200 1347 Practica 04.sch
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_STD          
+        DRVL    0             104            
+        DRVH    0              96.4          
+       AtoD1                 AtoD_STD        
+       AtoD2                 AtoD_STD_NX     
+       AtoD3                 AtoD_STD        
+       AtoD4                 AtoD_STD_NX     
+       DtoA1 DtoA_STM        DtoA_STD        
+       DtoA2 DtoA_STM        DtoA_STD        
+       DtoA3 DtoA_STM        DtoA_STD        
+       DtoA4 DtoA_STM        DtoA_STD        
+      TSWHL1                    1.373000E-09 
+      TSWHL2                    1.346000E-09 
+      TSWHL3                    1.511000E-09 
+      TSWHL4                    1.487000E-09 
+      TSWLH1                    3.382000E-09 
+      TSWLH2                    3.424000E-09 
+      TSWLH3                    3.517000E-09 
+      TSWLH4                    3.564000E-09 
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+WARNING -- No analog devices -- Small-Signal analysis ignored
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

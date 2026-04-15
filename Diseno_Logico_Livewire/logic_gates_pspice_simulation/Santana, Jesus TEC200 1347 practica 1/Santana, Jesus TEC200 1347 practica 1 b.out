@@ -1,0 +1,113 @@
+
+**** 09/13/25 11:12:30 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\kelvi\Downloads\Santana, Jesus TEC200 1347 practica 1\Santana, Jesus TEC200 1347 practica 1 b.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Sat Sep 13 11:12:27 2025
+
+
+
+** Analysis setup **
+.tran 0ns 40us
+.OP 
+.STMLIB "Santana, Jesus TEC200 1347 practica 1 b.stl"
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Santana, Jesus TEC200 1347 practica 1 b.net"
+
+**** INCLUDING "Santana, Jesus TEC200 1347 practica 1 b.net" ****
+* Schematics Netlist *
+
+
+
+X_U3A         A NOT $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U4A         A B AND $G_DPWR $G_DGND 7408 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U1A         A B NAND $G_DPWR $G_DGND 7400 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U5A         A B OR $G_DPWR $G_DGND 7432 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U6A         A B NOR $G_DPWR $G_DGND 7433 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U8A         XOR XNOR $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U7A         A B XOR $G_DPWR $G_DGND 7486 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+R_R1         NOR $N_0001  1k  
+X_U10A         y $N_0002 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U9A         x $N_0003 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+V_V1         $N_0001 0 0v
+U_DSTM2         STIM(4,1111)
++ $G_DPWR $G_DGND
++ x y A B 
++ IO_STM
++ IO_LEVEL=0
++ TIMESTEP=10us 
++ 0s 0000  
++ label=bucle  
++ 1c incrementa by 0001  
+-----$
+ERROR -- Invalid value
++ 2c goto bucle until ge 0011 
+------------------------------$
+ERROR -- Bad state value(s)
+
+**** RESUMING "Santana, Jesus TEC200 1347 practica 1 b.cir" ****
+.INC "Santana, Jesus TEC200 1347 practica 1 b.als"
+
+
+
+**** INCLUDING "Santana, Jesus TEC200 1347 practica 1 b.als" ****
+* Schematics Aliases *
+
+.ALIASES
+X_U3A           U3A(A=A Y=NOT PWR=$G_DPWR GND=$G_DGND )
+X_U4A           U4A(A=A B=B Y=AND PWR=$G_DPWR GND=$G_DGND )
+X_U1A           U1A(A=A B=B Y=NAND PWR=$G_DPWR GND=$G_DGND )
+X_U5A           U5A(A=A B=B Y=OR PWR=$G_DPWR GND=$G_DGND )
+X_U6A           U6A(A=A B=B Y=NOR PWR=$G_DPWR GND=$G_DGND )
+X_U8A           U8A(A=XOR Y=XNOR PWR=$G_DPWR GND=$G_DGND )
+X_U7A           U7A(A=A B=B Y=XOR PWR=$G_DPWR GND=$G_DGND )
+R_R1            R1(1=NOR 2=$N_0001 )
+X_U10A          U10A(A=y Y=$N_0002 PWR=$G_DPWR GND=$G_DGND )
+X_U9A           U9A(A=x Y=$N_0003 PWR=$G_DPWR GND=$G_DGND )
+V_V1            V1(+=$N_0001 -=0 )
+U_DSTM2          DSTM2(PIN0=x PIN1=y PIN2=A PIN3=B )
+_    _(A=A)
+_    _(NOT=NOT)
+_    _(B=B)
+_    _(AND=AND)
+_    _(NAND=NAND)
+_    _(OR=OR)
+_    _(NOR=NOR)
+_    _(XOR=XOR)
+_    _(XNOR=XNOR)
+_    _(y=y)
+_    _(x=x)
+_    _($G_DGND=$G_DGND)
+_    _($G_DPWR=$G_DPWR)
+.ENDALIASES
+
+
+**** RESUMING "Santana, Jesus TEC200 1347 practica 1 b.cir" ****
+.probe
+
+
+.END
+
